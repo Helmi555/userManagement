@@ -1,4 +1,4 @@
-package com.university.forum.usermanagement.service;
+package com.university.forum.usermanagement.MemberManagement.service;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
