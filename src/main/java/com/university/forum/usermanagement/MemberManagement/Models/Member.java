@@ -7,6 +7,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -25,12 +27,17 @@ public class Member {
     private UUID id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String addressEmail;
     private String phoneNumber;
     private String address;
     private String password;
     private String linkedInProfileUrl;
     private String profileImageUrl;
+    @Column(unique = true)
+    private String cin;
+
+    private LocalDate dob;
 
     @CreationTimestamp
     private Timestamp createdAt;

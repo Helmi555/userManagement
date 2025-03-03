@@ -1,6 +1,5 @@
 package com.university.forum.usermanagement.ClassGroupManagement.Models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class LevelOfStudy {
+public class Branch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +22,10 @@ public class LevelOfStudy {
     private String name;
     private String reference;
 
-
-    @OneToMany(mappedBy = "levelOfStudy",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<ClassGroup> classGroups=new ArrayList<>();
+    @OneToMany(mappedBy = "branch",orphanRemoval = true,cascade =CascadeType.ALL )
+    private List<Speciality> specialities =new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "speciality_id")
-    private Speciality speciality;
-
+    @JoinColumn(name = "departement_id")
+    private Departement departement;
 }

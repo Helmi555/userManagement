@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,7 +28,7 @@ public class ClassGroup {
 
     @OneToMany(mappedBy = "classGroup",cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Student> students ;
+    private List<Student> students = new ArrayList<>();
 
     @ManyToMany(mappedBy = "classGroups")
     private List<Professor> professors ;

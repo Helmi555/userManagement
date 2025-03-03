@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class LevelOfStudy {
+public class Departement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +23,7 @@ public class LevelOfStudy {
     private String name;
     private String reference;
 
-
-    @OneToMany(mappedBy = "levelOfStudy",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<ClassGroup> classGroups=new ArrayList<>();
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "speciality_id")
-    private Speciality speciality;
+    @OneToMany(mappedBy = "departement",orphanRemoval = true, cascade = CascadeType.ALL)
+    private List<Branch> branches=new ArrayList<>();
 
 }
