@@ -2,6 +2,7 @@ package com.university.forum.usermanagement.MemberManagement.Models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -29,12 +30,14 @@ public class Member {
     private String lastName;
     @Column(unique = true)
     private String addressEmail;
+    @Size(min = 8, max = 8)
     private String phoneNumber;
     private String address;
     private String password;
     private String linkedInProfileUrl;
     private String profileImageUrl;
     @Column(unique = true)
+    @Size(min = 8, max = 8)
     private String cin;
 
     private LocalDate dob;

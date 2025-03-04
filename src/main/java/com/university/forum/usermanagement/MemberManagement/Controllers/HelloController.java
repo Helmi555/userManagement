@@ -1,7 +1,7 @@
-package com.university.forum.usermanagement.MemberManagement.controller;
+package com.university.forum.usermanagement.MemberManagement.Controllers;
 
 
-import com.university.forum.usermanagement.MemberManagement.service.MessageProducer;
+import com.university.forum.usermanagement.MemberManagement.Services.MessageProducer;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
