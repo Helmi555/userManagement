@@ -26,6 +26,6 @@ public class Branch {
     private List<Speciality> specialities =new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "departement_id")
-    private Departement departement;
+    @JoinColumn(name = "department_id")
+    private Department department;
 }

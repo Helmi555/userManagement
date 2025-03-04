@@ -13,6 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+
 public class Student extends Member {
     private String studentNumber;
 

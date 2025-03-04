@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/usermanagement/admin/member/")
-@Validated
 public class StudentController {
 
     private final StudentService studentService;
@@ -26,9 +25,13 @@ public class StudentController {
     @Operation(summary = "Create Student", description = "Create a new student")
     @PostMapping("createStudent")
     public ResponseEntity<?> createStudent(@Valid @RequestBody StudentRequestDto studentRequestDto) {
+
+        System.out.println("First Name: " + studentRequestDto.getFirstName());
+        System.out.println("Last Name: " + studentRequestDto.getLastName());
         System.out.println(studentRequestDto);
         return ResponseEntity.ok("Student created successfully");
     }
+
 
 }
 
