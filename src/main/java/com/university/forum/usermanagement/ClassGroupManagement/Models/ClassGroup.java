@@ -14,10 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 @Table(name = "class_group")
 public class ClassGroup {
     @Id
@@ -36,4 +33,73 @@ public class ClassGroup {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levelOfStudy_id")
     private LevelOfStudy levelOfStudy;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public List<Professor> getProfessors() {
+        return professors;
+    }
+
+    public void setProfessors(List<Professor> professors) {
+        this.professors = professors;
+    }
+
+    public LevelOfStudy getLevelOfStudy() {
+        return levelOfStudy;
+    }
+
+    public void setLevelOfStudy(LevelOfStudy levelOfStudy) {
+        this.levelOfStudy = levelOfStudy;
+    }
+
+    public ClassGroup() {
+    }
+
+    public ClassGroup(int id, String name, String reference, List<Student> students, List<Professor> professors, LevelOfStudy levelOfStudy) {
+        this.id = id;
+        this.name = name;
+        this.reference = reference;
+        this.students = students;
+        this.professors = professors;
+        this.levelOfStudy = levelOfStudy;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassGroup{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", reference='" + reference + '\'' +
+                '}';
+    }
 }
